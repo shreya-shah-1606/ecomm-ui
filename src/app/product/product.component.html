@@ -1,0 +1,20 @@
+<!-- {{ products | json }} -->
+<div style="margin: 1rem;">
+  <button type="button" style="float: right;" class="btn btn-primary sm"  routerLink="/add">Add Product</button>
+</div>
+<div class="container">
+
+  <div class="row">
+      <ng-container *ngFor="let item of products">
+          <div class="card col-md-3">
+              <img src="{{item.productImage}}" alt="">
+              <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.productTitle}}</h5>
+              <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.description}}</p>
+              <p><strong>Price:</strong> ${{item.productPrice}}</p>
+              <button class="btn btn-primary" (click)="add(item)">Add to cart</button>
+          </div>
+      </ng-container>
+
+  </div>
+</div>
+
